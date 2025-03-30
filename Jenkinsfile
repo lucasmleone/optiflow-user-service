@@ -11,6 +11,12 @@ pipeline {
                 sh 'bash scripts/test.sh'
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+                sh 'bash scripts/deploy.sh'
+            }
+        }
        
     }
 }
