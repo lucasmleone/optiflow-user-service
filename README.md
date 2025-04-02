@@ -16,3 +16,4 @@ Este servicio es crítico ya que soporta la gestión centralizada de usuarios, m
 
 prueba
 perro
+simulation error
