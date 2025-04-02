@@ -18,11 +18,15 @@ if ! command -v pip3 &> /dev/null ; then
     sudo apt update && sudo apt -y install python3-pip
 fi
 
+if [[ ! -d "venv" ]]; then
+    echo "Creando entorno virtual..."
+    python3 -m venv venv
+fi
 
 if command -v pytest &> /dev/null ; then
     echo "pytest instalado"
 else
-    pip install pytest
+    ./venv/bin/pip install pytest
     if [[ $? -ne 0 ]]; then
         echo "error al instalar pytest"
         exit 1
