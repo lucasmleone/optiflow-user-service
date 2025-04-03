@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo "Ejecutando pruebas"
-sleep 1
+def test_suma():
 echo "Todos los test pasaron exitosamente"

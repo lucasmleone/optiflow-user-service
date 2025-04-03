@@ -6,9 +6,29 @@ sleep 1
 if command -v python3 &> /dev/null ; then
     echo "python instalado"
 else
-    sudo apt update &&  sudo apt -y install python3
+    sudo apt update && sudo apt -y install python3
     if [[ $? -ne 0 ]]; then
         echo "error al instalar python"
+        exit 1
+    fi
+fi
+
+if ! command -v pip3 &> /dev/null ; then
+    echo "pip3 no está instalado. Instalando..."
+    sudo apt update && sudo apt -y install python3-pip
+fi
+
+if [[ ! -d "venv" ]]; then
+    echo "Creando entorno virtual..."
+    python3 -m venv venv
+fi
+
+if command -v pytest &> /dev/null ; then
+    echo "pytest instalado"
+else
+    ./venv/bin/pip install pytest
+    if [[ $? -ne 0 ]]; then
+        echo "error al instalar pytest"
         exit 1
     fi
 

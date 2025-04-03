@@ -15,3 +15,5 @@ El pipeline automatiza el proceso de construcción, pruebas y despliegue, garant
 Este servicio es crítico ya que soporta la gestión centralizada de usuarios, mejorando la seguridad y eficiencia operativa en toda la organización.
 
 prueba
+perro
+simulation error

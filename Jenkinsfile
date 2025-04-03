@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'bash scripts/test.sh'
+                sh './venv/bin/pytest src/test.py'
             }
         }
         stage('Deploy') {
